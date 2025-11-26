@@ -13,7 +13,6 @@ interface CounterData {
 
 export const Counter: FC = () => {
   const wallet = useAnchorWallet();
-  const { connection } = useConnection();
   const [counterData, setCounterData] = useState<CounterData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -28,7 +27,7 @@ export const Counter: FC = () => {
       const program = getProgram(provider);
       const [counterPDA] = getCounterPDA(wallet.publicKey);
 
-      const account = await program.account.counter.fetch(counterPDA);
+      const account = await program.account.counter.fetch(counterPDA) as any;
       
       setCounterData({
         owner: account.owner.toString(),
