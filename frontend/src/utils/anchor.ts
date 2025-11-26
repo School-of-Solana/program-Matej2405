@@ -12,7 +12,7 @@ export function getProvider(wallet: AnchorWallet): AnchorProvider {
 }
 
 export function getProgram(provider: AnchorProvider): Program<Counter> {
-  return new Program(IDL as Counter, provider);
+  return new Program(IDL as any, provider) as Program<Counter>;
 }
 
 export function getCounterPDA(userPublicKey: web3.PublicKey): [web3.PublicKey, number] {

@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { useAnchorWallet, useConnection } from '@solana/wallet-adapter-react';
+import { useAnchorWallet } from '@solana/wallet-adapter-react';
 import { SystemProgram } from '@solana/web3.js';
 import { BN } from '@coral-xyz/anchor';
 import { getProvider, getProgram, getCounterPDA } from '../utils/anchor';
@@ -24,10 +24,10 @@ export const Counter: FC = () => {
 
     try {
       const provider = getProvider(wallet);
-      const program = getProgram(provider);
+      const program = getProgram(provider) as any;
       const [counterPDA] = getCounterPDA(wallet.publicKey);
 
-      const account = await program.account.counter.fetch(counterPDA) as any;
+      const account = await program.account.counter.fetch(counterPDA);
       
       setCounterData({
         owner: account.owner.toString(),
@@ -56,7 +56,7 @@ export const Counter: FC = () => {
 
     try {
       const provider = getProvider(wallet);
-      const program = getProgram(provider);
+      const program = getProgram(provider) as any;
       const [counterPDA] = getCounterPDA(wallet.publicKey);
 
       const tx = await program.methods
@@ -88,7 +88,7 @@ export const Counter: FC = () => {
 
     try {
       const provider = getProvider(wallet);
-      const program = getProgram(provider);
+      const program = getProgram(provider) as any;
       const [counterPDA] = getCounterPDA(wallet.publicKey);
 
       const tx = await program.methods
@@ -119,7 +119,7 @@ export const Counter: FC = () => {
 
     try {
       const provider = getProvider(wallet);
-      const program = getProgram(provider);
+      const program = getProgram(provider) as any;
       const [counterPDA] = getCounterPDA(wallet.publicKey);
 
       const tx = await program.methods
