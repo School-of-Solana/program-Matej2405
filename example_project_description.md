@@ -17,7 +17,7 @@ A simple decentralized counter application built on Solana. Users can create per
 
 ### How to Use the dApp
 1. **Connect Wallet** - Connect your Solana wallet
-2. **Initialize Counter** - Click "Create Counter" to set up your personal counter account
+2. **Initialize Counter** - Click "Create Counter" to set up your personal counter accoun
 3. **Increment** - Use the "+" button to increase your counter value
 4. **Reset** - Click "Reset" to set your counter back to 0
 5. **View Stats** - See your current count and total increments made
