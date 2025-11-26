@@ -1,6 +1,6 @@
 # Project Description
 
-**Deployed Frontend URL:** [TODO: Deploy to Vercel and add the URL here - See frontend/DEPLOYMENT.md for instructions]
+**Deployed Frontend URL:** https://counter-dapp-4odkczluw-matej-brodaracs-projects.vercel.app
 
 **Solana Program ID:** `7LxeBUZbMQ5kAumYKAtD6RcMnGws6HGLNqGsUuQ27mcN`
 
