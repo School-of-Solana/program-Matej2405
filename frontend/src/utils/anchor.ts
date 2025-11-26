@@ -1,7 +1,7 @@
 import { AnchorProvider, Program, web3 } from '@coral-xyz/anchor';
 import { AnchorWallet } from '@solana/wallet-adapter-react';
 import { Connection } from '@solana/web3.js';
-import { IDL, Counter } from '../idl/counter';
+import { IDL } from '../idl/counter';
 import { PROGRAM_ID, DEVNET_ENDPOINT } from './constants';
 
 export function getProvider(wallet: AnchorWallet): AnchorProvider {
@@ -11,8 +11,8 @@ export function getProvider(wallet: AnchorWallet): AnchorProvider {
   });
 }
 
-export function getProgram(provider: AnchorProvider): Program<Counter> {
-  return new Program(IDL as any, provider) as Program<Counter>;
+export function getProgram(provider: AnchorProvider) {
+  return new Program(IDL as any, provider);
 }
 
 export function getCounterPDA(userPublicKey: web3.PublicKey): [web3.PublicKey, number] {
